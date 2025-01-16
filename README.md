@@ -6,7 +6,8 @@ Basic S3 Integration for SFCC B2C Commerce.
 
 1. Import cartridge `int_s3`
 2. Import Service and Service Metadata from `meta/`
-3. Create Job from `custom.s3.export`
+3. Update service credential for bucket name, set user to AWS Access Key and password to AWS Secret Key; set AWS Region custom attribute
+3. Create Job from `custom.s3.export` to upload files to S3 Bucket with prefix
 
 ## Usage
 
@@ -36,8 +37,7 @@ Controller `S3Testing-Start` has some integration tests
 
 ### Support
 
-**This project should not be treated as Salesforce Product.** It is a tool and strategy for B2C project data and
-instance Management. Customers and partners implement this at-will with no expectation of roadmap, technical support,
+**This project should not be treated as Salesforce Product.** Customers and partners implement this at-will with no expectation of roadmap, technical support,
 defect resolution, production-style SLAs.
 
 This project is maintained by the **Salesforce Community**. Salesforce Commerce Cloud or Salesforce Platform Technical
