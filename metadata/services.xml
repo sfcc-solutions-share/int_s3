@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="aws.s3">
+        <url>https://bucket-name.s3.amazonaws.com</url>
+        <user-id>PLACEHOLDER</user-id>
+        <password masked="true">********</password>
+        <custom-attributes>
+            <custom-attribute attribute-id="awsRegion">us-east-2</custom-attribute>
+        </custom-attributes>
+    </service-credential>
+    <service-profile service-profile-id="aws.s3">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>4000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>5</cb-calls>
+        <cb-millis>4000</cb-millis>
+    </service-profile>
+    <service service-id="aws.s3">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>aws-s3</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>aws.s3</profile-id>
+        <credential-id>aws.s3</credential-id>
+    </service>
+</services>

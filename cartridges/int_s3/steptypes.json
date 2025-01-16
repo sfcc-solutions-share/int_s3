@@ -1,0 +1,55 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.s3.export",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "false",
+                "@supports-organization-context": "true",
+                "description": "Upload file patterns to S3",
+                "module": "int_s3/cartridge/scripts/jobs/exportS3.js",
+                "function": "exportS3",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "directory",
+                            "@type": "string",
+                            "@required": "true",
+                            "description": "source file directory"
+                        },
+                        {
+                            "@name": "pattern",
+                            "@type": "string",
+                            "@required": "true",
+                            "description": "source file pattern in impex"
+                        },
+                        {
+                            "@name": "prefix",
+                            "@type": "string",
+                            "@required": "true",
+                            "description": "prefix for uploaded file"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "NO_FILES_FOUND",
+                            "description": "Used when the step finished with no files found."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
